@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-10-08T16:56:35-0500",
-    comments = "version: 1.5.2.Final, compiler: Eclipse JDT (IDE) 3.40.0.v20240919-1711, environment: Java 17.0.12 (Eclipse Adoptium)"
+    date = "2024-10-08T17:16:26-0500",
+    comments = "version: 1.5.2.Final, compiler: javac, environment: Java 21.0.4 (Oracle Corporation)"
 )
 @Component
 public class UserMapperImpl implements UserMapper {
@@ -24,9 +24,9 @@ public class UserMapperImpl implements UserMapper {
 
         UserResponseDTO.UserResponseDTOBuilder userResponseDTO = UserResponseDTO.builder();
 
-        userResponseDTO.email( userEntity.getEmail() );
         userResponseDTO.id( userEntity.getId() );
         userResponseDTO.name( userEntity.getName() );
+        userResponseDTO.email( userEntity.getEmail() );
 
         return userResponseDTO.build();
     }
@@ -39,12 +39,12 @@ public class UserMapperImpl implements UserMapper {
 
         UserEntity.UserEntityBuilder userEntity = UserEntity.builder();
 
+        userEntity.name( userCreateDTO.getName() );
+        userEntity.email( userCreateDTO.getEmail() );
+        userEntity.password( userCreateDTO.getPassword() );
         userEntity.accountNonExpired( userCreateDTO.isAccountNonExpired() );
         userEntity.accountNonLocked( userCreateDTO.isAccountNonLocked() );
         userEntity.credentialsNonExpired( userCreateDTO.isCredentialsNonExpired() );
-        userEntity.email( userCreateDTO.getEmail() );
-        userEntity.name( userCreateDTO.getName() );
-        userEntity.password( userCreateDTO.getPassword() );
         userEntity.role( roleEnumToRoleEntity( userCreateDTO.getRole() ) );
 
         return userEntity.build();
