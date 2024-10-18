@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.fleetmanagement</groupId>
-	<artifactId>api-rest</artifactId>
+	<artifactId>api-ec2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>api-rest</name>
-	<description>API for managing fleet operations</description>
+	<name>api-ec2</name>
+	<description>API Deployment in AWS EC2</description>
 	<url/>
 	<licenses>
 		<license/>
